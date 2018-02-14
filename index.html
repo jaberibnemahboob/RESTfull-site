@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>REST API APP</title>
+        <link href="//cdn.muicss.com/mui-0.9.36/css/mui.min.css" rel="stylesheet" type="text/css" />
+        <script src="//cdn.muicss.com/mui-0.9.36/js/mui.min.js"></script>
+        <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+        <link rel="stylesheet" href="styles/style.css"/>
+    </head>
+    <body>
+        <div class="mui-container-fluid">
+            <div class="mui-appbar">
+                <div class="mui-container-fluid">
+                    <div class="mui-row">
+                        <div class="mui-col-md-8">
+                            <h1 class="uppercase">My Portfolio</h1>
+                        </div>
+                        <div class="mui-col-md-4 txtalign-right">
+                            <div class="addnew-holder">
+                                <a class="mui-btn mui-btn--raised addPortfolio" href="#"><i class="far fa-plus-square icon-black"></i>
+
+ Add New</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mui-panel">
+                <div id="portfolioListView">
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+
+        </div>
+
+
+        <div class="myModal itemShowModal">
+            <div class="modalContent">
+                <div class="itemContent">
+
+                </div>
+                <div class="modalFooter">
+                    <a class="mui-btn mui-btn--raised closeModal" href="#"><i class="fas fa-times icon-black"></i> Close</a>
+                </div>
+            </div>
+        </div>
+        <div class="myModal itemEditModal">
+            <div class="modalContent">
+                <div class="itemContent">
+
+                </div>
+                <div class="modalFooter">
+                    <a class="mui-btn mui-btn--raised closeModal" href="#"><i class="fas fa-times icon-black"></i> Close</a>
+                </div>
+            </div>
+        </div>
+        <div class="myModal itemCreateModal">
+            <div class="modalContent">
+                <div class="itemContent">
+                    <div class="mui-appbar modalHeader">
+                        <div>
+                            <h2 class="title">Create Portfolio Item</h2>
+                        </div>
+                    </div>
+                    <div class="mui-panel">
+                        <form class="mui-form">
+                            <div class="mui-textfield mui-textfield--float-label">
+                                <input type="text" name="title" class="title" value="">
+                                <label>Title</label>
+                            </div>
+                            <div class="mui-textfield mui-textfield--float-label">
+                                <input type="text" name="image" class="image" value="">
+                                <label>Image Path</label>
+                            </div>
+                            <div class="mui-textfield mui-textfield--float-label">
+                                <textarea name="description" class="description"></textarea>
+                                <label>Description</label>
+                            </div>
+                            <input type="hidden" class="createdat" name="createdat" value="">
+                            <input type="hidden" class="modifiedat" name="createdat" value="">
+                            <button type="submit" class="mui-btn mui-btn--raised">Submit</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="modalFooter">
+                    <a class="mui-btn mui-btn--raised closeModal" href="#"><i class="fas fa-times icon-black"></i> Close</a>
+                </div>
+            </div>
+        </div>
+
+
+        <template id="portfolioListViewTemplate">
+
+                    <div class="itemContent mui-container-fluid">
+                        <div class="mui-row">
+                            <div class="mui-col-md-4">
+                                <img class="image" src="images/group_animation.png" alt="Portfolio Image"/>
+                            </div>
+                            <div class="mui-col-md-8">
+                                <h2 class="title">Interactive Animation</h2>
+                                <div class="description">Coding an animation on a developed story board and a sequence diagram of a sence of a movie or, a fairy tale. The interactive story has more than five chained events with more than different events type. Interaction is visually clear to understand every steps.</div>
+                                <p>&nbsp;&nbsp;&nbsp;&mdash;published at <span class="createdat"></span></p>
+                                <p>&nbsp;&nbsp;&nbsp;&mdash;last modified at <span class="modifiedat"></span></p>
+                                <div class="actionBox mui-container-fluid">
+                                    <div class="mui-row">
+                                        <div class="mui-col-md-4">
+                                            <a class="mui-btn mui-btn--raised mui-btn--primary showItem" href="#"><i class="fas fa-eye"></i> View</a>
+                                        </div>
+                                        <div class="mui-col-md-4">
+                                            <a class="mui-btn mui-btn--raised mui-btn--accent editItem" href="#"><i class="fas fa-pencil-alt"></i> Edit</a>
+                                        </div>
+                                        <div class="mui-col-md-4">
+                                            <a class="mui-btn mui-btn--raised mui-btn--danger deleteItem" href="#"><i class="far fa-trash-alt"></i> Delete</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        </template>
+        <template id="modalViewItemTemplate">
+
+                <div class="modalShowItemContent">
+                    <div class="mui-appbar modalHeader">
+                        <div>
+                            <h2 class="title">Interactive Animation</h2>
+                        </div>
+                    </div>
+                    <div class="mui-panel">
+                        <div class="mui-container-fluid">
+                            <div class="mui-row">
+                                <div class="mui-col-md-5">
+                                    <img class="image" src="images/group_animation.png" alt="Portfolio Image"/>
+                                </div>
+                                <div class="mui-col-md-7">
+                                    <div class="description"></div>
+                                    <p>&nbsp;&nbsp;&nbsp;&mdash;published at <span class="createdat"></span></p>
+                                    <p>&nbsp;&nbsp;&nbsp;&mdash;last modified at <span class="modifiedat"></span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+        </template>
+        <template id="modalEditItemTemplate">
+
+                <div class="modalShowItemContent">
+                    <div class="mui-appbar modalHeader">
+                        <div>
+                            <h2 class="title">Edit Portfolio Item</h2>
+                        </div>
+                    </div>
+                    <div class="mui-panel">
+                        <form class="mui-form">
+                            <legend class="formTitle">Portfolio Name</legend>
+                            <div class="mui-textfield mui-textfield--float-label">
+                                <input type="text" name="title" class="title" value="">
+                                <label>Title</label>
+                            </div>
+                            <div class="mui-textfield mui-textfield--float-label">
+                                <input type="text" name="image" class="image" value="">
+                                <label>Image Path</label>
+                            </div>
+                            <div class="mui-textfield mui-textfield--float-label">
+                                <textarea name="description" class="description"></textarea>
+                                <label>Description</label>
+                            </div>
+                            <input type="hidden" class="_id" name="_id" value="">
+                            <input type="hidden" class="createdat" name="createdat" value="">
+                            <input type="hidden" class="modifiedat" name="createdat" value="">
+                            <button type="submit" class="mui-btn mui-btn--raised">Submit</button>
+                        </form>
+                    </div>
+                </div>
+
+        </template>
+
+
+        <script src="scripts/script.js"></script>
+        <script src="scripts/restdb.js"></script>
+    </body>
+</html>

@@ -1,0 +1,35 @@
+/* styletile */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300');
+*{font-family: 'Open Sans', sans-serif;}
+body{font-size: 11px; color: #555555;}
+h1,h2,h3{font-weight: bold;}
+h1{font-size: 2.5rem;}
+h2{font-size: 1.7rem;}
+h3{font-size: 1.5rem;}
+div, p{font-size: 1.2rem;}
+svg{color: white;}
+svg.icon-black{color: #555555;}
+.size-xlg{font-size: 3rem;}
+.mui-btn{font-weight: bold;}
+img{border: 0.5px solid #DEDEDE;}
+.icon-xlg{font-size: 2.5rem; margin: 1.5rem 0.5rem;}
+
+
+/* wireframe */
+*{box-sizing: border-box; margin: 0;}
+img{width: 100%;}
+.addnew-holder{padding: 1rem;}
+.actionBox>div>div{text-align: center;}
+.myModal{display: none; position: fixed; top: 0; left: 0; z-index: 10; width: 100vw; height: 100vh; background-color: rgba(0,0,0,0.25); padding: 10%;}
+.myModal.showModal{display: block;}
+.myModal>.modalContent{position: absolute; background-color: white; top: 10vh; left: 110vw; width: 80vw; transition: all 1s;}
+.myModal.showModal>.modalContent{left: 10vw;}
+.modalHeader>div{padding: 0.1rem 1rem;}
+.modalFooter{text-align: right; padding: 0.1rem 1rem;}
+
+
+/* general class */
+.uppercase{text-transform: uppercase;}
+.display-block{display: block;}
+.txtalign-right{text-align: right;}
+.hidden{display: none;}
